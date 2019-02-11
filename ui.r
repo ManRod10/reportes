@@ -12,12 +12,11 @@ datos <- read_csv("saber 2018.csv")
 shinyUI(fluidPage(
 
    titlePanel("Generador de Reportes parametrizado"),
-   
-   h4("La siguiente aplicacion genera reportes para 
-                      cada uno de los colegios, utilizando como insumo las pruebas Saber 11"),
-   
-        box(selectInput(inputId = "sede",label = "Sede",
-                    choices = unique(datos$cole_cod_dane_sede),
-                    multiple = FALSE,width = 700))
-                                )
-)
+  
+  h4("La siguiente aplicacion genera reportes para 
+     cada uno de los colegios, utilizando 
+     como insumo las pruebas Saber 11"),
+  
+  box(numericInput(inputId = 'sede',label = 'Codigo',value = 5)),
+
+  mainPanel(downloadButton("reporte", "Generar")))
