@@ -1,4 +1,7 @@
-shinyServer(function(input, output) {
+library(shiny)
+shinyServer(
+  function(input, output) {
   
  
-})
+}
+)
