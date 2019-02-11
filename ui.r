@@ -20,5 +20,6 @@ shinyUI(fluidPage(
       box(selectInput(inputId = "sede",label = "Sede",
                     choices = unique(datos$cole_cod_dane_sede),
                     multiple = FALSE,width = 700)
-         )
+         ),
+   mainPanel(downloadButton("reporte", "Generar"))
 ))
