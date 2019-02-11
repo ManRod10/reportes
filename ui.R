@@ -1,4 +1,4 @@
-ui <- fluidPage(
+shinyUI(fluidPage(
 
    titlePanel("Generador de Reportes parametrizado"),
    
