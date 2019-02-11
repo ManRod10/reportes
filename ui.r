@@ -17,5 +17,6 @@ shinyUI(fluidPage(
      cada uno de los colegios, utilizando 
      como insumo las pruebas Saber 11"),
   
-  box(numericInput(inputId = 'sede',label = 'Codigo',value = 5))
-)
+      box(selectInput(inputId = "sede",label = "Sede",
+                    choices = unique(datos$cole_cod_dane_sede),
+                    multiple = FALSE,width = 700)))
