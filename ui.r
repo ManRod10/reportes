@@ -6,7 +6,6 @@ library(kableExtra)
 library(shiny)
 library(shinydashboard)
 library(readr)
-setwd("~")
 
 shinyUI(fluidPage(
 
@@ -17,8 +16,6 @@ shinyUI(fluidPage(
    
         box(selectInput(inputId = "sede",label = "Sede",
                     choices = unique(datos$cole_nombre_sede),
-                    multiple = FALSE,width = 700)),
-                    
-   mainPanel(downloadButton("reporte", "Generar")
-            )
+                    multiple = FALSE,width = 700))
+                                )
 )
