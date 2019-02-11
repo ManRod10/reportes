@@ -1,6 +1,6 @@
 
-  installed.packages(dplyr)
-  installed.packages(ggplot2)
+  installed.packages('dplyr')
+  installed.packages('ggplot2')
   installed.packages(gridExtra)
     installed.packages(knitr)
     installed.packages(kableExtra)
