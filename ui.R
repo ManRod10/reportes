@@ -9,4 +9,6 @@ shinyUI(fluidPage(
                     choices = unique(datos$cole_nombre_sede),
                     multiple = FALSE,width = 700)),
                     
-   mainPanel(downloadButton("reporte", "Generar")))
+   mainPanel(downloadButton("reporte", "Generar")
+            )
+)
