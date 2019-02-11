@@ -1,10 +1,13 @@
-librerias = c('dplyr','ggplot2','gridExtra',
-              'knitr','kableExtra','shiny',
-              'shinydashboard','readr')
 
-for (i in 1:length(librerias)){
-  installed.packages(librerias[i])
-  }
+  installed.packages(dplyr)
+  installed.packages(ggplot2)
+  installed.packages(gridExtra)
+    installed.packages(knitr)
+    installed.packages(kableExtra)
+    installed.packages(shiny)
+    installed.packages(shinydashboard)
+    installed.packages(readr)
+
 
 library(dplyr)
 library(ggplot2)
