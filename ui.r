@@ -1,3 +1,12 @@
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(knitr)
+library(kableExtra)
+library(shiny)
+library(shinydashboard)
+library(readr)
+
 shinyUI(fluidPage(
 
    titlePanel("Generador de Reportes parametrizado"),
