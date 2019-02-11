@@ -21,4 +21,4 @@ shinyUI(fluidPage(
                     choices = unique(datos$cole_cod_dane_sede),
                     multiple = FALSE,width = 700)
          )
-)
+))
