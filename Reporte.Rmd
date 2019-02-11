@@ -15,9 +15,9 @@ output:
 
 knitr::opts_chunk$set(echo = FALSE, fig.align="center")
 
-numero <- unique(datos$cole_cod_dane_sede)[params$codigo]
+numero <- params$codigo
 
-make <- datos$cole_nombre_sede[datos$cole_cod_dane_sede == format(unique(datos$cole_cod_dane_sede)[params$codigo],scientific = FALSE)[1]]
+make <- datos$cole_nombre_sede[datos$cole_cod_dane_sede == params$codigo][1]
 
 make <- make[1]
 
@@ -92,7 +92,7 @@ t2 <- matx %>%
  
 ```
 
-## Desempeño en Matematicas en relacion a su ubicacion.
+## DesempeÃ±o en Matematicas en relacion a su ubicacion.
 
 ```{r,echo=FALSE}
 materia <- t_punt[t_punt$prueba == "Matematicas",]
@@ -121,25 +121,25 @@ p_gen<-with(materia[materia$grupo == "1.Colegio",],
             t.test(punt_[genero == "M"],punt_[genero == "F"] ))
 
 
-uno <- list(paste("la institucion tuvo un desempeño 
+uno <- list(paste("la institucion tuvo un desempeÃ±o 
                   estadisticamente superior al promedio del grupo de referencia",   round(p_dep$estimate[1] - p_dep$estimate[2],digits = 2),
             "puntos"))
 
-dos <- list(paste("la institucion tuvo un desempeño
+dos <- list(paste("la institucion tuvo un desempeÃ±o
                   estadisticamente inferior al promedio del grupo de referencia", round(p_dep$estimate[2] - p_dep$estimate[1],digits = 2),
             "puntos"))
 
-#tres <- list(paste("la institucion tuvo un desempeño
+#tres <- list(paste("la institucion tuvo un desempeÃ±o
  #                  estadisticamente superior al promedio municipal de", round(p_mun$estimate[1] - p_mun$estimate[2],digits = 2),         "puntos"))
 
-#cuatro <- list(paste("la institucion tuvo un desempeño
+#cuatro <- list(paste("la institucion tuvo un desempeÃ±o
   #                   estadisticamente inferior al promedio municipal de", round(p_mun$estimate[2] - p_mun$estimate[1],digits = 2),    "puntos"))
 
 cinco <- list(paste("En la institucion, los hombres 
-                    presentaron un desempeño estadisticamente superior al promedio de las mujeres y fue de ", round(p_gen$estimate[1] - p_gen$estimate[2],digits = 2),"puntos"))
+                    presentaron un desempeÃ±o estadisticamente superior al promedio de las mujeres y fue de ", round(p_gen$estimate[1] - p_gen$estimate[2],digits = 2),"puntos"))
 
 seis <- list(paste("En la institucion, los mujeres 
-                   presentaron un desempeño estadisticamente superior al promedio de los hombres y fue de ", round(p_gen$estimate[2] - p_gen$estimate[1],digits = 2),"puntos"))
+                   presentaron un desempeÃ±o estadisticamente superior al promedio de los hombres y fue de ", round(p_gen$estimate[2] - p_gen$estimate[1],digits = 2),"puntos"))
 
 cor2 <- round(cor(subset(materia, !is.na(inse))$punt_,subset(materia, !is.na(inse))$inse),2)
 correlacion <- list(paste0("La correlacion entre el INSE y el puntaje es de ",cor2, sep = " "))
@@ -163,7 +163,7 @@ alto <- round(count(materia[materia$cole == 1 & materia$Estrato == "Alto",])/Ne*
 
 ```{r ,fig.width = 7, fig.height = 3.8,echo=FALSE,warning=FALSE}
 
-ggplot(data = materia[materia$cole == 1,], aes(x= inse, y = punt_, shape = Estrato)) + geom_point(aes(colour = Estrato)) + ylab("Puntaje") + xlab("Indice Socioeconómico") + ggtitle("Relacion condiciones socioeconomicas y desemepeño") + labs(subtitle = paste("Porcetaje de esstudiantes en estrato Bajo", bajo,"%", "Medio", medio,"%", "Alto", alto,"%")) + theme_minimal() + theme(legend.position = c("bottom")) + ylim(0,100)
+ggplot(data = materia[materia$cole == 1,], aes(x= inse, y = punt_, shape = Estrato)) + geom_point(aes(colour = Estrato)) + ylab("Puntaje") + xlab("Indice SocioeconÃ³mico") + ggtitle("Relacion condiciones socioeconomicas y desemepeÃ±o") + labs(subtitle = paste("Porcetaje de esstudiantes en estrato Bajo", bajo,"%", "Medio", medio,"%", "Alto", alto,"%")) + theme_minimal() + theme(legend.position = c("bottom")) + ylim(0,100)
 
 ```
 
@@ -199,7 +199,7 @@ t2 <- matx %>%
  
 ```
 
-## Desempeño en Matematicas en relacion a su ubicacion.
+## DesempeÃ±o en Matematicas en relacion a su ubicacion.
 
 ```{r,echo=FALSE}
 materia <- t_punt[t_punt$prueba == "Lectura",]
@@ -227,22 +227,22 @@ p_mun<-with(materia,t.test(punt_[grupo == "1.Colegio"],
 p_gen<-with(materia[materia$grupo == "1.Colegio",],
             t.test(punt_[genero == "M"],punt_[genero == "F"] ))
 
-uno <- list(paste("la institucion tuvo un desempeño 
+uno <- list(paste("la institucion tuvo un desempeÃ±o 
                   estadisticamente superior al promedio del grupo de referencia",          round(p_dep$estimate[1] - p_dep$estimate[2],digits = 2),"puntos"))
 
-dos <- list(paste("la institucion tuvo un desempeño
+dos <- list(paste("la institucion tuvo un desempeÃ±o
                   estadisticamente inferior al promedio del grupo de referencia", round(p_dep$estimate[2] - p_dep$estimate[1],digits = 2),"puntos"))
 
-#tres <- list(paste("la institucion tuvo un desempeño
+#tres <- list(paste("la institucion tuvo un desempeÃ±o
  #                  estadisticamente superior al promedio municipal de", round(p_mun$estimate[1] - p_mun$estimate[2],digits = 2),"puntos"))
 
-#cuatro <- list(paste("la institucion tuvo un desempeño
+#cuatro <- list(paste("la institucion tuvo un desempeÃ±o
  #                    estadisticamente inferior al promedio municipal de", round(p_mun$estimate[2] - p_mun$estimate[1],digits = 2),"puntos"))
 
 cinco <- list(paste("En la institucion, los hombres 
-                    presentaron un desempeño estadisticamente superior al promedio de las mujeres y fue de ", round(p_gen$estimate[1] - p_gen$estimate[2],digits = 2),"puntos"))
+                    presentaron un desempeÃ±o estadisticamente superior al promedio de las mujeres y fue de ", round(p_gen$estimate[1] - p_gen$estimate[2],digits = 2),"puntos"))
 
-seis <- list(paste("En la institucion, los mujeres presentaron un desempeño estadisticamente superior al promedio de los hombres y fue de ", round(p_gen$estimate[2] - p_gen$estimate[1],digits = 2),"puntos"))
+seis <- list(paste("En la institucion, los mujeres presentaron un desempeÃ±o estadisticamente superior al promedio de los hombres y fue de ", round(p_gen$estimate[2] - p_gen$estimate[1],digits = 2),"puntos"))
 
 cor2 <- round(cor(subset(materia, !is.na(inse))$punt_,subset(materia, !is.na(inse))$inse),2)
 
@@ -273,7 +273,7 @@ alto <- round(count(materia[materia$cole == 1 & materia$Estrato == "Alto",])/Ne*
 
 ```{r ,fig.width = 7, fig.height = 3.8,echo=FALSE,warning=FALSE}
 
-ggplot(data = materia[materia$cole == 1,], aes(x= inse, y = punt_, shape = Estrato)) + geom_point(aes(colour = Estrato)) + ylab("Puntaje") + xlab("Indice Socioeconómico") + ggtitle("Relacion condiciones socioeconomicas y desemepeño") + labs(subtitle = paste("Porcetaje de esstudiantes en estrato Bajo", bajo,"%", "Medio", medio,"%", "Alto", alto,"%")) + theme_minimal() + theme(legend.position = c("bottom")) + ylim(0,100)
+ggplot(data = materia[materia$cole == 1,], aes(x= inse, y = punt_, shape = Estrato)) + geom_point(aes(colour = Estrato)) + ylab("Puntaje") + xlab("Indice SocioeconÃ³mico") + ggtitle("Relacion condiciones socioeconomicas y desemepeÃ±o") + labs(subtitle = paste("Porcetaje de esstudiantes en estrato Bajo", bajo,"%", "Medio", medio,"%", "Alto", alto,"%")) + theme_minimal() + theme(legend.position = c("bottom")) + ylim(0,100)
 
 ```
 
@@ -310,7 +310,7 @@ t2 <- matx %>%
  
 ```
 
-## Desempeño en Sociales en relacion a su ubicacion.
+## DesempeÃ±o en Sociales en relacion a su ubicacion.
 
 ```{r,echo=FALSE}
 materia <- t_punt[t_punt$prueba == "Sociales",]
@@ -338,22 +338,22 @@ p_mun<-with(materia,t.test(punt_[grupo == "1.Colegio"],
 p_gen<-with(materia[materia$grupo == "1.Colegio",],
             t.test(punt_[genero == "M"],punt_[genero == "F"] ))
 
-uno <- list(paste("la institucion tuvo un desempeño 
+uno <- list(paste("la institucion tuvo un desempeÃ±o 
                   estadisticamente superior al promedio del grupo de referencia",          round(p_dep$estimate[1] - p_dep$estimate[2],digits = 2),"puntos"))
 
-dos <- list(paste("la institucion tuvo un desempeño
+dos <- list(paste("la institucion tuvo un desempeÃ±o
                   estadisticamente inferior al promedio del grupo de referencia", round(p_dep$estimate[2] - p_dep$estimate[1],digits = 2),"puntos"))
 
-#tres <- list(paste("la institucion tuvo un desempeño
+#tres <- list(paste("la institucion tuvo un desempeÃ±o
  #                  estadisticamente superior al promedio municipal de", round(p_mun$estimate[1] - p_mun$estimate[2],digits = 2),"puntos"))
 
-#cuatro <- list(paste("la institucion tuvo un desempeño
+#cuatro <- list(paste("la institucion tuvo un desempeÃ±o
  #                    estadisticamente inferior al promedio municipal de", round(p_mun$estimate[2] - p_mun$estimate[1],digits = 2),"puntos"))
 
 cinco <- list(paste("En la institucion, los hombres 
-                    presentaron un desempeño estadisticamente superior al promedio de las mujeres y fue de ", round(p_gen$estimate[1] - p_gen$estimate[2],digits = 2),"puntos"))
+                    presentaron un desempeÃ±o estadisticamente superior al promedio de las mujeres y fue de ", round(p_gen$estimate[1] - p_gen$estimate[2],digits = 2),"puntos"))
 
-seis <- list(paste("En la institucion, los mujeres presentaron un desempeño estadisticamente superior al promedio de los hombres y fue de ", round(p_gen$estimate[2] - p_gen$estimate[1],digits = 2),"puntos"))
+seis <- list(paste("En la institucion, los mujeres presentaron un desempeÃ±o estadisticamente superior al promedio de los hombres y fue de ", round(p_gen$estimate[2] - p_gen$estimate[1],digits = 2),"puntos"))
 
 cor2 <- round(cor(subset(materia, !is.na(inse))$punt_,subset(materia, !is.na(inse))$inse),2)
 
@@ -378,7 +378,7 @@ alto <- round(count(materia[materia$cole == 1 & materia$Estrato == "Alto",])/Ne*
 
 ```{r ,fig.width = 7, fig.height = 3.5,echo=FALSE,warning=FALSE}
 
-ggplot(data = materia[materia$cole == 1,], aes(x= inse, y = punt_, shape = Estrato)) + geom_point(aes(colour = Estrato)) + ylab("Puntaje") + xlab("Indice Socioeconómico") + ggtitle("Relacion condiciones socioeconomicas y desemepeño") + labs(subtitle = paste("Porcetaje de esstudiantes en estrato Bajo", bajo,"%", "Medio", medio,"%", "Alto", alto,"%")) + theme_minimal() + theme(legend.position = c("bottom")) + ylim(0,100)
+ggplot(data = materia[materia$cole == 1,], aes(x= inse, y = punt_, shape = Estrato)) + geom_point(aes(colour = Estrato)) + ylab("Puntaje") + xlab("Indice SocioeconÃ³mico") + ggtitle("Relacion condiciones socioeconomicas y desemepeÃ±o") + labs(subtitle = paste("Porcetaje de esstudiantes en estrato Bajo", bajo,"%", "Medio", medio,"%", "Alto", alto,"%")) + theme_minimal() + theme(legend.position = c("bottom")) + ylim(0,100)
 
 ```
 
@@ -413,7 +413,7 @@ t2 <- matx %>%
  
 ```
 
-## Desempeño en Sociales en relacion a su ubicacion.
+## DesempeÃ±o en Sociales en relacion a su ubicacion.
 
 ```{r,echo=FALSE}
 materia <- t_punt[t_punt$prueba == "Naturales",]
@@ -441,22 +441,22 @@ p_mun<-with(materia,t.test(punt_[grupo == "1.Colegio"],
 p_gen<-with(materia[materia$grupo == "1.Colegio",],
             t.test(punt_[genero == "M"],punt_[genero == "F"] ))
 
-uno <- list(paste("la institucion tuvo un desempeño 
+uno <- list(paste("la institucion tuvo un desempeÃ±o 
                   estadisticamente superior al promedio del grupo de referencia",          round(p_dep$estimate[1] - p_dep$estimate[2],digits = 2),"puntos"))
 
-dos <- list(paste("la institucion tuvo un desempeño
+dos <- list(paste("la institucion tuvo un desempeÃ±o
                   estadisticamente inferior al promedio del grupo de referencia", round(p_dep$estimate[2] - p_dep$estimate[1],digits = 2),"puntos"))
 
-#tres <- list(paste("la institucion tuvo un desempeño
+#tres <- list(paste("la institucion tuvo un desempeÃ±o
  #                  estadisticamente superior al promedio municipal de", round(p_mun$estimate[1] - p_mun$estimate[2],digits = 2),"puntos"))
 
-#cuatro <- list(paste("la institucion tuvo un desempeño
+#cuatro <- list(paste("la institucion tuvo un desempeÃ±o
  #                    estadisticamente inferior al promedio municipal de", round(p_mun$estimate[2] - p_mun$estimate[1],digits = 2),"puntos"))
 
 cinco <- list(paste("En la institucion, los hombres 
-                    presentaron un desempeño estadisticamente superior al promedio de las mujeres y fue de ", round(p_gen$estimate[1] - p_gen$estimate[2],digits = 2),"puntos"))
+                    presentaron un desempeÃ±o estadisticamente superior al promedio de las mujeres y fue de ", round(p_gen$estimate[1] - p_gen$estimate[2],digits = 2),"puntos"))
 
-seis <- list(paste("En la institucion, los mujeres presentaron un desempeño estadisticamente superior al promedio de los hombres y fue de ", round(p_gen$estimate[2] - p_gen$estimate[1],digits = 2),"puntos"))
+seis <- list(paste("En la institucion, los mujeres presentaron un desempeÃ±o estadisticamente superior al promedio de los hombres y fue de ", round(p_gen$estimate[2] - p_gen$estimate[1],digits = 2),"puntos"))
 
 cor2 <- round(cor(subset(materia, !is.na(inse))$punt_,subset(materia, !is.na(inse))$inse),2)
 
@@ -481,7 +481,7 @@ alto <- round(count(materia[materia$cole == 1 & materia$Estrato == "Alto",])/Ne*
 
 ```{r ,fig.width = 7, fig.height = 3.5,echo=FALSE,warning=FALSE}
 
-ggplot(data = materia[materia$cole == 1,], aes(x= inse, y = punt_, shape = Estrato)) + geom_point(aes(colour = Estrato)) + ylab("Puntaje") + xlab("Indice Socioeconómico") + ggtitle("Relacion condiciones socioeconomicas y desemepeño") + labs(subtitle = paste("Porcetaje de esstudiantes en estrato Bajo", bajo,"%", "Medio", medio,"%", "Alto", alto,"%")) + theme_minimal() + theme(legend.position = c("bottom")) + ylim(0,100)
+ggplot(data = materia[materia$cole == 1,], aes(x= inse, y = punt_, shape = Estrato)) + geom_point(aes(colour = Estrato)) + ylab("Puntaje") + xlab("Indice SocioeconÃ³mico") + ggtitle("Relacion condiciones socioeconomicas y desemepeÃ±o") + labs(subtitle = paste("Porcetaje de esstudiantes en estrato Bajo", bajo,"%", "Medio", medio,"%", "Alto", alto,"%")) + theme_minimal() + theme(legend.position = c("bottom")) + ylim(0,100)
 
 ```
 
