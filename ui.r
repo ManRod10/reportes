@@ -1,3 +1,11 @@
+librerias = c('dplyr','ggplot2','gridExtra',
+              'knitr','kableExtra','shiny',
+              'shinydashboard','readr')
+
+for (i in 1:length(librerias)){
+  installed.packages(librerias[i])
+  }
+
 library(dplyr)
 library(ggplot2)
 library(gridExtra)
