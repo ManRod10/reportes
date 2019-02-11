@@ -6,6 +6,7 @@ library(kableExtra)
 library(shiny)
 library(shinydashboard)
 library(readr)
+setwd("~")
 
 shinyUI(fluidPage(
 
