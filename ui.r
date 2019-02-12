@@ -9,14 +9,14 @@
     installed.packages('readr')
 
 
-library(dplyr)
-library(ggplot2)
-library(gridExtra)
-library(knitr)
-library(kableExtra)
-library(shiny)
-library(shinydashboard)
-library(readr)
+require(dplyr)
+require(ggplot2)
+require(gridExtra)
+require(knitr)
+require(kableExtra)
+require(shiny)
+require(shinydashboard)
+require(readr)
 
 datos <- read_csv("saber 2018.csv")
 
