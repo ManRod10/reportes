@@ -8,6 +8,8 @@ require(shiny)
 require(shinydashboard)
 require(readr)
 
+ datos <- read_csv("prueba.csv")
+
 
  shinyUI(fluidPage(
 
