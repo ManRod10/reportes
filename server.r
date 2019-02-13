@@ -2,6 +2,9 @@ library(shiny)
 datos <- read_csv("saber 2018.csv")
 
 shinyServer(
+  
+  print(input$sede)
+    
   function(input, output) {
     
  output$reporte <- downloadHandler(
