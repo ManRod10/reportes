@@ -4,7 +4,7 @@ author: "Manuel Rodriguez"
 params:
    codigo:
     label: "Codigo"
-    value: 5
+    value: !r format(datos$cole_cod_dane_sede[1], scientific =FALSE )
     input: numeric	
 output: 
   ioslides_presentation: 
@@ -12,8 +12,6 @@ output:
 ---
 
 ```{r, echo=FALSE}
-
-datos <- read_csv("saber 2018.csv")
 
 knitr::opts_chunk$set(echo = FALSE, fig.align="center")
 
