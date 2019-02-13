@@ -5,8 +5,9 @@ shinyServer(
     
   function(input, output) {
     
+      reactive({
     print(input$sede)
-     
+     })
  output$reporte <- downloadHandler(
     filename = paste("Reporte",".html",sep = ""),
     
