@@ -17,7 +17,8 @@ require(kableExtra)
 require(shiny)
 require(shinydashboard)
 require(readr)
-
+this.dir <- dirname(parent.frame(2)$ofile)
+setwd(this.dir)
 datos <- read_csv("saber 2018.csv")
 
 shinyUI(fluidPage(
