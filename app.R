@@ -8,9 +8,8 @@ require(shiny)
 require(shinydashboard)
 require(readr)
 
-datos <- read_csv("prueba.csv")
 
- ui <- fluidPage(
+ shinyUI(fluidPage(
 
    titlePanel("Generador de Reportes parametrizado"),
   
@@ -24,24 +23,4 @@ datos <- read_csv("prueba.csv")
          ),
    mainPanel(downloadButton("reporte", "Generar"))
 )
- 
- server <-  function(input, output) {
-   
-   reactive({
-     print(input$sede)
-   })
-   output$reporte <- downloadHandler(
-     filename = paste("Reporte",".html",sep = ""),
-     
-     content = function(file){
-       
-       params <- list(codigo = input$sede)
-       
-       rmarkdown::render("Reporte.Rmd",output_file = file,
-                         params = params,
-                         envir = new.env(parent = globalenv())
-       ) })  
-   
- }
- shinyApp(ui = ui, server = server)
- 
+) 
