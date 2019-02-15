@@ -2,7 +2,7 @@
 
 Esta aplicacion se construyo utilizando la base de datos de las pruebas SABER 11 del ICFES y las librerias de Shiny y Rmarkdown. Los archivos denotan lo siguiente:
 
-* **Reporte.Rm** Es la plantilla del reporte estadistico, puede generarse en distintos formatos (.docx,pptx,html,pdf)
+* **Reporte - copia.Rmd** Es un archivo Rmardown, el cual contiene la plantilla del reporte estadistico, el cual puede generarse en distintos formatos (.docx,pptx,html,pdf)
 * **ui.r** Es la interfaz de usuario (en donde se interactua con la app)
 * **server.r** Es el servidor el cual compila los reportes deacuerdo al Colegio elegido
 * **stilyes.css** Es archvio que contiene el estilo de la presentacion, aunque en este caso solo se incluye el logo de R studio
