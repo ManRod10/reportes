@@ -19,7 +19,7 @@ shinyUI(fluidPage(
      como insumo las pruebas Saber 11"),
   
       box(selectInput(inputId = "sede",label = "Sede",
-                    choices = unique(datos$cole_cod_dane_sede),
+                    choices = unique(datos$cole_nombre_sede),
                     multiple = FALSE,width = 700)
          ),
    mainPanel(downloadButton("reporte", "Generar"))
