@@ -9,8 +9,6 @@ require(shinydashboard)
 require(readr)
 require(httr)
 
-url <- "https://raw.githubusercontent.com/ManRod10/reportes/master/prueba.csv"
-datos<- read.csv(url)
 
 shinyUI(fluidPage(
 
