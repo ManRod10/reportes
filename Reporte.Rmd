@@ -114,13 +114,7 @@ p_dep<-with(materia,t.test(punt_[grupo == "1.Colegio"],
 
 p_mun<-with(materia,t.test(punt_[grupo == "1.Colegio"],
                            punt_[grupo != "2.Municipio"] ))
-
-if  ( (nrow(materia[materia$grupo== "1.Colegio" & materia$genero == "M",]) > 5) &
- (nrow(materia[materia$grupo== "1.Colegio" & materia$genero == "F",]) > 5) ) {
-
-p_gen<-with(materia[materia$grupo == "1.Colegio",],
-            t.test(punt_[genero == "M"],punt_[genero == "F"] ))
-}
+p_gen <-p_mun
 
 uno <- list(paste("la institucion tuvo un desempeño 
                   estadisticamente superior al promedio del grupo de referencia",   round(p_dep$estimate[1] - p_dep$estimate[2],digits = 2),
