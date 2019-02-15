@@ -1,5 +1,6 @@
 slides > slide.title-slide {
 background-image: url("logo.png") ;  
+background-repeat: repeat-n;
 background-size: 630px 216px;
 background-position: 20px 50px;
 }
