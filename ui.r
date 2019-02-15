@@ -9,9 +9,10 @@ require(shinydashboard)
 require(readr)
 require(httr)
 
-datos <-read.csv(GET("https://github.com/ManRod10/reportes/blob/master/prueba.csv"))
+url <- "https://raw.githubusercontent.com/ManRod10/reportes/master/prueba.csv"
+datos<- read.csv(url)
 
- shinyUI(fluidPage(
+shinyUI(fluidPage(
 
    titlePanel("Generador de Reportes parametrizado"),
   
