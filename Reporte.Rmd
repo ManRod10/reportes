@@ -30,7 +30,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align="center")
 
 datos$cole<-ifelse(datos$cole_nombre_sede == make,1,0)
 
-head(datos$cole)
+head(datos[datos$cole == 1,])
 
 datos$muni<-ifelse(datos$cole_mcpio_ubicacion == 
                      datos$cole_mcpio_ubicacion[datos$cole == 1][1],1,0)
