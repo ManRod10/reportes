@@ -5,7 +5,7 @@
      
      content = function(file){
        
-       params <- list(codigo = input$sede)
+       params <- list(make = input$sede)
        
        rmarkdown::render("Reporte - copia.Rmd",output_file = file,
                          params = params,
