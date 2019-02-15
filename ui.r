@@ -9,7 +9,7 @@ require(shinydashboard)
 require(readr)
 require(httr)
 
-datos <-read.csv(text=GET("https://github.com/ManRod10/reportes/blob/master/prueba.csv"))
+datos <-read.csv(text=GET("https://github.com/ManRod10/reportes/blob/master/prueba.csv"),skip=7, header=T)
 
  shinyUI(fluidPage(
 
