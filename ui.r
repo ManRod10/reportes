@@ -7,9 +7,9 @@ require(kableExtra)
 require(shiny)
 require(shinydashboard)
 require(readr)
+require(httr)
 
- datos <- read_csv("prueba.csv")
-
+datos <-read.csv(text=GET("https://github.com/ManRod10/reportes/blob/master/prueba.csv"))
 
  shinyUI(fluidPage(
 
