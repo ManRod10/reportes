@@ -7,7 +7,7 @@
        
        params <- list(codigo = input$sede)
        
-       rmarkdown::render("Reporte.Rmd",output_file = file,
+       rmarkdown::render("Reporte - copia.Rmd",output_file = file,
                          params = params,
                          envir = new.env(parent = globalenv())
        ) })  
